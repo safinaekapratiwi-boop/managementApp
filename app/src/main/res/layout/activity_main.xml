@@ -1,133 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#F4F3EF"
+    android:orientation="vertical"
     android:padding="20dp">
 
-    <!--Bagian Header : Sapaan-->
+    <!-- Bagian Header: Sapaan -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="24dp">
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical">
 
-        <!--Elemen View-->
+        <!-- Elemen TextView -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selamat Datang,"
-            android:textSize="14sp"
-            android:textColor="#2D2A26">
+            android:text="Selamat Datang."
+            android:textColor="#2D2A26"
+            android:textSize="14sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tvNamaSiswa"
-            android:text="Devcasa (Kelas XII RPL 2)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DevCasSa (Kelas XII RPL 20)"
+            android:textColor="#2D3436"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#2D3436"/>
+            android:textStyle="bold" />
+
     </LinearLayout>
 
-    <!--Bagian Kartu Ringkasan-->
+    <!-- Bagian Kartu Ringkasan -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="24dp">
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal">
 
-        <!--Kotak 1: Info Tugas-->
+        <!-- Kotak 1: Info Tugas-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:orientation="vertical"
-            android:background="FFFFFF"
-            android:padding="16dp"
-            android:layoutmarginEnd="8dp">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tugas Pending"
-                android:textSize="12sp"
-                android:textColor="#636E72"/>
+                android:textColor="#636E72"
+                android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/tvJumlahTugas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvJumlahTugas"
+                android:layout_marginTop="4dp"
                 android:text="3"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 android:textColor="#D63031"
-                android:layout_marginTop="4dp"/>
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
+        <!-- kotak 2 : Info Nilai -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
             android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginStart="8dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rata - Rata Nilai"
-                android:textSize="12sp"
-                android:textColor="#636E72"/>
+                android:textColor="#636E72"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvRataNilai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="88.5"
+                android:textColor="#00B894"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Banner pengumuman dengan framelayout-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="24dp">
+
+        <!--Layer 1: background lapisan belakang-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0984E3" />
+
+        <!--Layer layout:2 Teks lapisan depan-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvRataNilai"
-                android:text="88.5"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#00B894"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
-    </LinearLayout>
+                android:text="PENGUMUMAN PENTING"
+                android:textColor="#0FE6E9"
+                android:textSize="11sp"
+                android:textStyle="bold" />
 
-    <!--Bagian Judul : DaftarTugas Terbaru-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Ujian Kompetisi RPL dimulai hari Jumat ini"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!--Tombol untuk ke halaman form-->
+    <Button
+        android:id="@+id/TombolForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0984E3"
+        android:text="Tambah Tugas"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+    <!-- Bagian Judul : Daftar Tugas Terbaru -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:text="Tugas Terbaru"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:textColor="#2D3436"
-        android:layout_marginBottom="12dp"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    <!--placeholder sementara card tugas-->
+    <!-- placeholder sementara card tugas -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="#FFFFFF"
+        android:orientation="vertical"
         android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Object Oriented Programming(OOP)"
+            android:text="Object Oriented Programing(OOP)"
+            android:textColor="#2D3436"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="#2D3436"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="Buat Program CRUD Sederhana"
-            android:textSize="12sp"
-            android:textColor="#636E72"
-            android:layout_marginTop="4dp"/>
+            android:textColor="#2D3436"
+            android:textSize="12sp" />
+
 
     </LinearLayout>
 
+
 </LinearLayout>
+</FrameLayout>
